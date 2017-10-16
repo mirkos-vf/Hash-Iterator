@@ -3,4 +3,7 @@ Makefile.PL
 MANIFEST
 README
 t/Hash-Iterator.t
+t/Pod.t
+t/Tidy.t
+t/Critic.t
 lib/Hash/Iterator.pm
