@@ -38,3 +38,5 @@ inc/
 
 .gitignore
 .idea/
+/bin/
+bin/
