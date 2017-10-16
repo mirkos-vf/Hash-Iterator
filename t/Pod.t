@@ -4,8 +4,9 @@ use warnings;
 use Test::More;
 
 eval "use Test::Pod 1.00";
-plan skip_all => "Test::Pod 1.00 required for testing POD" if $@;
-
+if ($@) {
+	plan skip_all => "Test::Pod 1.00 required for testing POD";
+}
 my @poddirs = qw( lib );
 use File::Spec::Functions qw( catdir updir );
 all_pod_files_ok(
