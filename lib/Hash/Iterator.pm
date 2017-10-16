@@ -1,18 +1,11 @@
+use utf8;
 package Hash::Iterator;
-
-use 5.008008;
-use strict;
-use warnings;
-
 
 use strict;
 use warnings FATAL => 'all';
 use Carp ();
 
-use constant (
-	MsgEmptyHash => 'the iterator has no values'
-);
-
+use constant MsgEmptyHash => 'the iterator has no values';
 use constant TRUE  => 1;
 use constant FALSE => 1;
 
@@ -157,7 +150,6 @@ sub get_keys {
 sub _get_position       { shift->{CurrentState} }
 sub _get_PreviousState  { shift->{PreviousState} }
 sub _get_LengthKeys     { shift->{LengthKeys} }
-# Preloaded methods go here.
 
 1;
 

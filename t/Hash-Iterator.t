@@ -6,7 +6,8 @@
 # change 'tests => 1' to 'tests => last_test_to_print';
 
 use strict;
-use warnings FATAL => 'all';
+use warnings;
+use Test::More;
 use Hash::Iterator;
 
 my %hash = (
@@ -84,6 +85,7 @@ eval {
 	Hash::Iterator->new->next;
 };
 
+done_testing;
 #########################
 
 # Insert your test code below, the Test::More module is use()ed here so read
