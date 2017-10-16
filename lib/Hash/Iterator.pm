@@ -106,6 +106,20 @@ sub is_ref {
 	return;
 }
 
+sub get_data {
+	my $self = shift;
+	return wantarray
+		? @{ $self->{Data} }
+		: $self->_get_LengthKeys;
+}
+
+sub get_keys {
+	my $self = shift;
+	return wantarray
+		? @{ $self->{Keys} }
+		: $self->_get_LengthKeys;
+}
+
 sub _get_value {
 	my $self = shift;
 
@@ -133,20 +147,6 @@ sub _get_key {
 	return undef;
 }
 
-sub get_data {
-	my $self = shift;
-	return wantarray
-		? @{ $self->{Data} }
-		: $self->_get_LengthKeys;
-}
-
-sub get_keys {
-	my $self = shift;
-	return wantarray
-		? @{ $self->{Keys} }
-		: $self->_get_LengthKeys;
-}
-
 sub _get_position       { shift->{CurrentState} }
 sub _get_PreviousState  { shift->{PreviousState} }
 sub _get_LengthKeys     { shift->{LengthKeys} }
@@ -163,8 +163,20 @@ Hash::Iterator - Perl extension for blah blah blah
 
 =head1 SYNOPSIS
 
-  use Hash::Iterator;
-  blah blah blah
+	my $iterator = Hash::Iterator->new( map { $_ => uc $_ } 'a'..'z' );
+
+	while ($iterator->next) {
+		say sprintf("%s => %s", $iterator->peek_key, $iterator->peek_value);
+	}
+
+	my $iterator = Hash::Iterator->new( a => [qw(one two three)] );
+	$iterator->next;
+
+	if ( $iterator->is_ref('ARRAY') ) {
+		foreach my $item ( @{$iterator->peek_value} ) {
+			say $item;
+		}
+	}
 
 =head1 DESCRIPTION
 
@@ -174,11 +186,41 @@ unedited.
 
 Blah blah blah.
 
-=head2 EXPORT
+=head1 METHODS
 
-None by default.
+=over
 
+=head2 next
 
+	$iterator->next;
+
+=head2 previous
+
+	$iterator->previous;
+
+=head2 done
+
+	do {
+		....
+	} while ($iterator->done);
+
+=head2 peek_key
+
+	say $iterator->peek_key;
+
+=head2 peek_value
+
+	say $iterator->peek_value;
+
+=head2 is_ref
+
+	if ( $iterator->is_ref('ARRAY') ) {
+		...
+	}
+
+=head2 get_keys
+
+	my @keys =  $iterator->get_keys;
 
 =head1 SEE ALSO
 
