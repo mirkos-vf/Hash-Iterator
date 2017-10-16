@@ -9,7 +9,14 @@ Hash-Iterator version 0.01
 	make
 	make test
 	make install
+	
+_cpan_
 
+	sudo perl -MCPAN -e shel
+	cpan> install Hash::Iterator
+	
+	cpan install Hash::Iterator
+	
 
 **NAME**
 
