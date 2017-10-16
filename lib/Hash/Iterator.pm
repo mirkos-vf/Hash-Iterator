@@ -159,7 +159,7 @@ __END__
 
 =head1 NAME
 
-Hash::Iterator - Perl extension for blah blah blah
+Hash::Iterator - Hashtable Iterator.
 
 =head1 SYNOPSIS
 
@@ -180,11 +180,13 @@ Hash::Iterator - Perl extension for blah blah blah
 
 =head1 DESCRIPTION
 
-Stub documentation for Hash::Iterator, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
+=head1 CONSTRUCTORS
 
-Blah blah blah.
+=head2 new
+
+    my $iterator = Hash::Iterator->new( %hash );
+
+Return a Hash::Iterator for C<hash>
 
 =head1 METHODS
 
@@ -196,9 +198,13 @@ Blah blah blah.
 
     $iterator->next;
 
+Advance the iterator to the next key-value pair
+
 =head2 previous
 
     $iterator->previous;
+
+Advance the iterator to the previous key-value pair
 
 =head2 done
 
@@ -206,13 +212,23 @@ Blah blah blah.
         ....
     } while ($iterator->done);
 
+Returns a boolean value if the iterator was exhausted
+
 =head2 peek_key
 
     say $iterator->peek_key;
 
+Return the key of the current key-value pair. It's not allowed to
+call this method before L<next()|/next> was called for the first time or
+after the iterator was exhausted.
+
 =head2 peek_value
 
     say $iterator->peek_value;
+
+Return the value of the current key-value pair.  It's not allowed to
+call this method before L<next()|/next> was called for the first time or
+after the iterator was exhausted.
 
 =head2 is_ref
 
@@ -220,20 +236,13 @@ Blah blah blah.
         ...
     }
 
+Returns a boolean value if value is a reference.
+
 =head2 get_keys
 
     my @keys =  $iterator->get_keys;
 
-=head1 SEE ALSO
-
-Mention other useful documentation such as the documentation of
-related modules or operating system documentation (such as man pages
-in UNIX), or any relevant external documentation such as RFCs or
-standards.
-
-If you have a mailing list set up for your module, mention it here.
-
-If you have a web site set up for your module, mention it here.
+Returns a list of all keys from hash
 
 =head1 AUTHOR
 
@@ -247,5 +256,6 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.18.2 or,
 at your option, any later version of Perl 5 you may have available.
 
+=encoding UTF-8
 
 =cut
