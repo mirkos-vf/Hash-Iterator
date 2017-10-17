@@ -1,4 +1,4 @@
-Hash-Iterator version 0.01
+Hash-Iterator version 0.02
 ==========================
 
 **INSTALLATION**

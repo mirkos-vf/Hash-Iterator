@@ -10,7 +10,7 @@ use constant MsgEmptyHash => 'the iterator has no values';
 use constant TRUE         => 1;
 use constant FALSE        => 0;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 sub new {
     my $class = shift;
