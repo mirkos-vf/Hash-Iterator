@@ -11,12 +11,10 @@ To install this module type the following:
 	make install
 ```	
 _cpan_
-
-	sudo perl -MCPAN -e shel
-	cpan> install Hash::Iterator
-	
-	cpan install Hash::Iterator
-	
+```shell
+	perl -MCPAN -e shell
+	install Hash::Iterator
+```	
 
 **NAME**
 
