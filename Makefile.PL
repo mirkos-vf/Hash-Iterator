@@ -7,6 +7,7 @@ WriteMakefile(
     NAME              => 'Hash::Iterator',
     VERSION_FROM      => 'lib/Hash/Iterator.pm', # finds $VERSION
     PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    LICENSE           => 'perl',
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Hash/Iterator.pm', # retrieve abstract from module
        AUTHOR         => 'vlad mirkos <mirkos.vf@gmail.com>') : ()),
