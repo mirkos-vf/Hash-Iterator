@@ -24,7 +24,7 @@ Hash::Iterator - Hashtable Iterator.
 
 **SYNOPSIS**
 
-```perl
+```perl5
     my $iterator = Hash::Iterator->new( map { $_ => uc $_ } 'a'..'z' );
 
     while ($iterator->next) {
@@ -39,6 +39,7 @@ Hash::Iterator - Hashtable Iterator.
             say $item;
         }
     }
+
 ```
 
 **DESCRIPTION**
@@ -47,9 +48,7 @@ _CONSTRUCTORS_
 
 _new_
 
-```perl
 	my $iterator = Hash::Iterator->new( %hash );
-```
 
 Return a Hash::Iterator for C<hash>
 
@@ -57,35 +56,27 @@ Return a Hash::Iterator for C<hash>
 
 _next_
 
-```perl
-	$iterator->next;
-```
+    $iterator->next;
 
 Advance the iterator to the next key-value pair
 
 _previous_
 
-```perl
-	$iterator->previous;
-```
+    $iterator->previous;
 
 Advance the iterator to the previous key-value pair
 
 _done_
 
-```perl
-	do {
-	    ....
-	} while ($iterator->done);
+    do {
+        ....
+    } while ($iterator->done);
 
-```
 Returns a boolean value if the iterator was exhausted
 
 _peek_key_
 
-```perl
-	say $iterator->peek_key;
-```
+    say $iterator->peek_key;
 
 Return the key of the current key-value pair. It's not allowed to
 call this method before L<next()|/next> was called for the first time or
@@ -93,9 +84,7 @@ after the iterator was exhausted.
 
 _peek_value_
 
-```perl
-	say $iterator->peek_value;
-```
+    say $iterator->peek_value;
 
 Return the value of the current key-value pair.  It's not allowed to
 call this method before L<next()|/next> was called for the first time or
@@ -103,19 +92,15 @@ after the iterator was exhausted.
 
 _is_ref_
 
-```perl
-	if ( $iterator->is_ref('ARRAY') ) {
-	    ...
-	}
-```
+    if ( $iterator->is_ref('ARRAY') ) {
+        ...
+    }
 
 Returns a boolean value if value is a reference.
 
 _get_keys_
 
-```perl
-	my @keys =  $iterator->get_keys;
-```
+    my @keys =  $iterator->get_keys;
 
 Returns a list of all keys from hash
 
