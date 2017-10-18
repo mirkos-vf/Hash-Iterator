@@ -4,17 +4,19 @@ Hash-Iterator version 0.02
 **INSTALLATION**
 
 To install this module type the following:
+
 ```shell
 	perl Makefile.PL
 	make
 	make test
 	make install
-```	
+```
 _cpan_
+
 ```shell
 	perl -MCPAN -e shell
 	install Hash::Iterator
-```	
+```
 
 **NAME**
 
