@@ -3,13 +3,13 @@ Hash-Iterator version 0.02
 
 **INSTALLATION**
 
-	To install this module type the following:
-
+To install this module type the following:
+```shell
 	perl Makefile.PL
 	make
 	make test
 	make install
-	
+```	
 _cpan_
 
 	sudo perl -MCPAN -e shel
@@ -56,15 +56,15 @@ Return a Hash::Iterator for C<hash>
 **METHODS**
 
 _next_
-
+```perl
     $iterator->next;
-
+```
 Advance the iterator to the next key-value pair
 
 _previous_
-
+```perl
     $iterator->previous;
-
+```
 Advance the iterator to the previous key-value pair
 
 _done_
