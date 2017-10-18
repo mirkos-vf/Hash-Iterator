@@ -24,7 +24,7 @@ Hash::Iterator - Hashtable Iterator.
 
 **SYNOPSIS**
 
-```perl5
+```perl
     my $iterator = Hash::Iterator->new( map { $_ => uc $_ } 'a'..'z' );
 
     while ($iterator->next) {
@@ -38,8 +38,7 @@ Hash::Iterator - Hashtable Iterator.
         foreach my $item ( @{$iterator->peek_value} ) {
             say $item;
         }
-    }
-
+    }	
 ```
 
 **DESCRIPTION**
