@@ -39,4 +39,4 @@ inc/
 .gitignore
 .idea/
 /bin/
-bin/
+Hash-Iterator.iml

@@ -57,9 +57,9 @@ sub next {
         $self->{CurrentState}++;
     }
     else {
-        return 0;
+        return TRUE;
     }
-    return 1;
+    return FALSE;
 }
 
 sub previous {
@@ -71,9 +71,9 @@ sub previous {
         $self->{CurrentState} = $self->{PreviousState};
         $self->{PreviousState}--;
 
-        return 1;
+        return TRUE;
     }
-    return undef;
+    return FALSE;
 }
 
 sub peek_key {
@@ -81,7 +81,7 @@ sub peek_key {
     my $key  = $self->_get_key;
 
     return $key if $key;
-    return undef;
+    return FALSE;
 }
 
 sub peek_value {
@@ -104,9 +104,9 @@ sub is_ref {
     my $value = $self->_get_value;
 
     if ( ref $value eq $ref ) {
-        return 1;
+        return TRUE;
     }
-    return;
+    return FALSE;
 }
 
 sub get_data {
@@ -134,7 +134,7 @@ sub _get_value {
     Carp::croak($@) if $@;
 
     return $CurrentValue if $CurrentValue;
-    return undef;
+    return FALSE;
 }
 
 sub _get_key {
@@ -147,9 +147,9 @@ sub _get_key {
     return $curKey if $curKey;
 }
 
-sub _get_position      { shift->{CurrentState} }
+sub _get_position      { shift->{CurrentState}  }
 sub _get_PreviousState { shift->{PreviousState} }
-sub _get_LengthKeys    { shift->{LengthKeys} }
+sub _get_LengthKeys    { shift->{LengthKeys}    }
 
 1;
 
