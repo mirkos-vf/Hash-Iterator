@@ -57,9 +57,9 @@ sub next {
         $self->{CurrentState}++;
     }
     else {
-        return TRUE;
+        return FALSE;
     }
-    return FALSE;
+    return TRUE;
 }
 
 sub previous {
