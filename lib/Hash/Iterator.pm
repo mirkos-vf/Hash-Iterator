@@ -133,7 +133,7 @@ sub _get_value {
     };
     Carp::croak($@) if $@;
 
-    return $CurrentValue if $CurrentValue;
+    return $CurrentValue if defined $CurrentValue;
     return FALSE;
 }
 
